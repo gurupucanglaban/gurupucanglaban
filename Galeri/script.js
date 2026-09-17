@@ -20,7 +20,7 @@ judul:"Pelatihan Pramuka"
 },
 {
 img:"img/MBGSDNegeriSumberbendo3.jpeg",
-judul:"MBG SDNegeri 3 Sumberbendo .jpeg"
+judul:"MBG SDNegeri 3 Sumberbendo"
 }
 ];
 
