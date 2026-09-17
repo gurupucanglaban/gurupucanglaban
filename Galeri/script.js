@@ -14,7 +14,10 @@ judul:"Nambor SDN 4 Demuk"
 img:"img/terireogkendang.jpeg",
 judul:"Pelatihan reog Kendang"
 }
-
+{
+img:"img/EkstraKurikulerPramuka.jpg",
+judul:"Pelatihan Pramuka"
+}
 ];
 
 const gallery=document.getElementById("gallery");
