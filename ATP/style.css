@@ -1,0 +1,415 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f3f6f9;
+    color:#333;
+}
+
+/* ===========================
+   NAVBAR ATP
+=========================== */
+
+.navbar{
+
+    background:linear-gradient(90deg,#2e7d32,#43a047);
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 40px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.12);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+}
+
+.logo{
+
+    color:white;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+}
+
+.navbar ul{
+
+    list-style:none;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.navbar ul li{
+
+    position:relative;
+
+}
+
+.navbar ul li a{
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:24px 18px;
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+.navbar ul li a:hover{
+
+    background:rgba(255,255,255,.15);
+
+}
+
+/* ===========================
+   DROPDOWN ATP
+=========================== */
+
+.dropdown-content{
+
+    position:absolute;
+
+    top:70px;
+
+    left:0;
+
+    width:220px;
+
+    background:white;
+
+    display:none;
+
+    border-radius:0 0 10px 10px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.18);
+
+}
+
+.dropdown-content a{
+
+    color:#333 !important;
+
+    padding:14px 18px !important;
+
+    border-bottom:1px solid #eeeeee;
+
+}
+
+.dropdown-content a:hover{
+
+    background:#e8f5e9;
+
+    color:#2e7d32 !important;
+
+}
+
+.dropdown:hover .dropdown-content{
+
+    display:block;
+
+}
+
+/* ===========================
+   KONTEN ATP
+=========================== */
+
+.container{
+
+    padding:30px;
+
+}
+
+.container h2{
+
+    color:#2e7d32;
+
+    margin-bottom:25px;
+
+    font-size:28px;
+
+}
+
+/* ===========================
+   FOLDER ATP
+=========================== */
+
+.folder-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.folder{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:all .4s ease;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    border:1px solid #e5e5e5;
+
+}
+
+.folder:hover{
+
+    transform:translateY(-8px) scale(1.03);
+
+    box-shadow:0 15px 25px rgba(0,0,0,.18);
+
+    border-color:#43a047;
+
+}
+
+.folder-icon{
+
+    font-size:72px;
+
+    transition:.4s;
+
+    margin-bottom:15px;
+
+}
+
+.folder h3{
+
+    color:#2e7d32;
+
+    margin-top:15px;
+
+    margin-bottom:8px;
+
+    transition:.3s;
+
+}
+
+.folder p{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+.folder:hover h3{
+
+    color:#1b5e20;
+
+}
+
+.folder:hover .folder-icon{
+
+    transform:scale(1.15);
+
+}
+
+/* ===========================
+   FILE ATP
+=========================== */
+
+.file-list{
+
+    margin-top:20px;
+
+    display:none;
+
+}
+
+.file{
+
+    background:white;
+
+    margin-bottom:10px;
+
+    padding:15px 20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border-radius:8px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+.file:hover{
+
+    background:#f5fff5;
+
+}
+
+.file-name{
+
+    font-size:15px;
+
+}
+
+.file-action{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.btn{
+
+    text-decoration:none;
+
+    padding:8px 15px;
+
+    border-radius:6px;
+
+    color:white;
+
+    transition:.3s;
+
+}
+
+.view{
+
+    background:#2196f3;
+
+}
+
+.view:hover{
+
+    background:#1976d2;
+
+}
+
+.download{
+
+    background:#2e7d32;
+
+}
+
+.download:hover{
+
+    background:#1b5e20;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+
+    margin-top:50px;
+
+    padding:20px;
+
+    background:#2e7d32;
+
+    color:white;
+
+    text-align:center;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.navbar{
+
+    flex-direction:column;
+
+    height:auto;
+
+    padding:10px;
+
+}
+
+.navbar ul{
+
+    flex-direction:column;
+
+    width:100%;
+
+}
+
+.navbar ul li{
+
+    width:100%;
+
+}
+
+.navbar ul li a{
+
+    padding:15px;
+
+}
+
+.dropdown-content{
+
+    position:static;
+
+    width:100%;
+
+    border-radius:0;
+
+}
+
+.container{
+
+    padding:15px;
+
+}
+
+.folder-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}

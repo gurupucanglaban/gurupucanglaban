@@ -1,0 +1,2367 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GURU PUCANGLABAN</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+>
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- =====================================================
+     GOOGLE IDENTITY SERVICES
+     DEFER AGAR CALLBACK SUDAH TERSEDIA
+===================================================== -->
+
+<script src="https://accounts.google.com/gsi/client" defer></script>
+
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="top-header">
+
+<div class="container">
+
+<div class="logo">
+
+<img
+src="images/Guru Pucanglaban.png"
+alt="Logo GURU PUCANGLABAN"
+
+>
+
+<div>
+
+<h1>GURU PUCANGLABAN</h1>
+
+<p>Portal Pendidikan Kecamatan Pucanglaban</p>
+
+</div>
+
+</div>
+
+<div class="header-right">
+
+<!--<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+name="search"
+placeholder="Cari artikel..."
+autocomplete="off"
+
+>
+
+<button type="button">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</button>-->
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+<div class="container">
+
+<ul>
+
+<li>
+
+<a href="index.html">
+Beranda
+</a>
+
+</li>
+
+<li>
+
+<a href="#">
+
+Profil
+
+<i class="fa-solid fa-angle-down"></i>
+
+</a>
+
+<ul class="dropdown">
+
+<li>
+
+<a href="Sejarah/Sejarah.html">
+Sejarah
+</a>
+
+</li>
+
+<li>
+
+<a href="Stuktur-organisasi/struktur-organisasi.html">
+Struktur Organisasi
+</a>
+
+</li>
+
+</ul>
+
+</li>
+
+<li>
+
+<a href="#">
+
+Berita
+
+<i class="fa-solid fa-angle-down"></i>
+
+</a>
+
+<ul class="dropdown">
+
+<li>
+
+<a href="Halaman-diperbaiki/Halaman-diperbaiki.html">
+Berita Pendidikan
+</a>
+
+</li>
+
+<li>
+
+<a href="Halaman-diperbaiki/Halaman-diperbaiki.html">
+Info Sekolah
+</a>
+
+</li>
+
+<li>
+
+<a href="Halaman-diperbaiki/Halaman-diperbaiki.html">
+Pengumuman
+</a>
+
+</li>
+
+</ul>
+
+</li>
+
+<li>
+
+<a href="#">
+
+Download
+
+<i class="fa-solid fa-angle-down"></i>
+
+</a>
+
+<ul class="dropdown">
+
+<li>
+
+<a href="modul_ajar/modulajar.html">
+Modul Ajar
+</a>
+
+</li>
+
+<li>
+
+<a href="ATP/atp.html">
+ATP
+</a>
+
+</li>
+
+<li>
+
+<a href="Bank_Soal/BankSoal.html">
+Bank Soal
+</a>
+
+</li>
+
+<li>
+
+<a href="kurikulum/kurikulum.html">
+Kurikulum
+</a>
+
+</li>
+
+<li>
+
+<a href="e-book/e-book.html">
+E-Book
+</a>
+
+</li>
+
+</ul>
+
+</li>
+
+<li>
+
+<a href="Galeri/Galeri.html">
+Galeri
+</a>
+
+</li>
+
+<li>
+
+<a href="forum/forum.html" id="forumButton">
+
+<i class="fa-solid fa-comments"></i>
+
+Forum
+
+</a>
+
+</li>
+
+<li>
+
+<a href="Kontak/kontak.html">
+Kontak
+</a>
+
+</li>
+
+<!-- =================================================
+     LOGIN MENU
+================================================= -->
+
+<li id="loginMenu">
+
+<a href="#" id="loginButton">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+Login
+
+</a>
+
+</li>
+
+<!-- =================================================
+     USER MENU
+================================================= -->
+
+<li
+    id="userMenu"
+    style="display:none;"
+>
+
+<a href="#" id="userMenuLink">
+
+<img
+id="navUserPhoto"
+src="images/tamu.jpeg"
+alt="Foto pengguna"
+
+>
+
+<span id="navUserName">
+Pengguna
+</span>
+
+<i class="fa-solid fa-angle-down"></i>
+
+</a>
+
+<ul class="dropdown user-dropdown">
+
+<li class="user-info">
+
+<img
+id="dropdownUserPhoto"
+src="images/tamu.jpeg"
+alt="Foto pengguna"
+
+>
+
+<div>
+
+<strong id="dropdownUserName">
+Pengguna
+</strong>
+
+<small id="dropdownUserEmail">
+-
+</small>
+
+</div>
+
+</li>
+
+<li>
+
+<button
+type="button"
+id="logoutButton"
+class="logout-button"
+
+>
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</button>
+
+</li>
+
+</ul>
+
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     BERITA TERBARU
+===================================================== -->
+
+<section class="news">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Berita Terbaru</h2>
+
+<p>
+Informasi pendidikan terbaru dari GURU PUCANGLABAN
+</p>
+
+</div>
+
+<div class="news-wrapper">
+
+<div class="news-content">
+
+<article class="news-card">
+
+<img
+src="images/Halamansedangdiperbaiki.png"
+alt="Workshop Implementasi Deep Learning"
+
+>
+
+<div class="news-text">
+
+<span class="category">
+Pendidikan
+</span>
+
+<h3>
+
+<a href="Halaman-diperbaiki/Halaman-diperbaiki.html">
+
+Workshop Implementasi Deep Learning Bagi Guru SD
+
+</a>
+
+</h3>
+
+<p>
+
+Pelatihan mengenai pembelajaran mendalam untuk meningkatkan kualitas pembelajaran di sekolah dasar.
+
+</p>
+
+<div class="news-info">
+
+<span>
+
+<i class="fa-regular fa-calendar"></i>
+
+25 Juli 2026
+
+</span>
+
+<span>
+
+<i class="fa-regular fa-user"></i>
+
+Admin
+
+</span>
+
+</div>
+
+</div>
+
+</article>
+
+<article class="news-card">
+
+<img
+src="images/Halamansedangdiperbaiki.png"
+alt="Festival Literasi Kecamatan Pucanglaban"
+
+>
+
+<div class="news-text">
+
+<span class="category">
+Sekolah
+</span>
+
+<h3>
+
+<a href="Halaman-diperbaiki/Halaman-diperbaiki.html">
+
+Festival Literasi Kecamatan Pucanglaban
+
+</a>
+
+</h3>
+
+<p>
+
+Puluhan sekolah mengikuti kegiatan literasi dan pameran karya siswa.
+
+</p>
+
+<div class="news-info">
+
+<span>
+
+<i class="fa-regular fa-calendar"></i>
+
+24 Juli 2026
+
+</span>
+
+<span>
+
+<i class="fa-regular fa-user"></i>
+
+Admin
+
+</span>
+
+</div>
+
+</div>
+
+</article>
+
+<article class="news-card">
+
+<img
+src="images/Halamansedangdiperbaiki.png"
+alt="Guru Berprestasi Tingkat Kabupaten"
+
+>
+
+<div class="news-text">
+
+<span class="category">
+Prestasi
+</span>
+
+<h3>
+
+<a href="Halaman-diperbaiki/Halaman-diperbaiki.html">
+
+Guru Berprestasi Tingkat Kabupaten
+
+</a>
+
+</h3>
+
+<p>
+
+Penghargaan diberikan kepada guru yang berhasil menghadirkan inovasi pembelajaran.
+
+</p>
+
+<div class="news-info">
+
+<span>
+
+<i class="fa-regular fa-calendar"></i>
+
+22 Juli 2026
+
+</span>
+
+<span>
+
+<i class="fa-regular fa-user"></i>
+
+Admin
+
+</span>
+
+</div>
+
+</div>
+
+</article>
+
+</div>
+
+<aside class="sidebar">
+
+<div class="popular-news">
+
+<h3>
+
+<i class="fa-solid fa-fire"></i>
+
+Berita Populer
+
+</h3>
+
+<ul>
+
+<li>
+
+<a href="Halaman-diperbaiki/Halaman-diperbaiki.html">
+
+Implementasi Kurikulum Merdeka Tahun 2026
+
+</a>
+
+</li>
+
+<li>
+
+<a href="Halaman-diperbaiki/Halaman-diperbaiki.html">
+
+Modul Ajar Terbaru Semua Kelas SD
+
+</a>
+
+</li>
+
+<li>
+
+<a href="Halaman-diperbaiki/Halaman-diperbaiki.html">
+
+Panduan ATP Lengkap Semester Ganjil
+
+</a>
+
+</li>
+
+<li>
+
+<a href="Halaman-diperbaiki/Halaman-diperbaiki.html">
+
+Cara Membuat LKPD Interaktif
+
+</a>
+
+</li>
+
+<li>
+
+<a href="Halaman-diperbaiki/Halaman-diperbaiki.html">
+
+Media Pembelajaran Berbasis AI
+
+</a>
+
+</li>
+
+<li>
+
+<a href="Halaman-diperbaiki/Halaman-diperbaiki.html">
+
+Deep Learning untuk Guru SD
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<div class="quote-box">
+
+<i class="fa-solid fa-quote-left"></i>
+
+<p>
+
+"Pendidikan bukan sekadar mengajar, tetapi menumbuhkan karakter dan masa depan."
+
+</p>
+
+<h4>
+- Ki Hadjar Dewantara
+</h4>
+
+</div>
+
+</aside>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     DOWNLOAD TERBARU
+===================================================== -->
+
+<section class="download-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Download Terbaru</h2>
+
+<p>
+Silakan unduh berbagai perangkat pembelajaran.
+</p>
+
+</div>
+
+<div class="download-grid">
+
+<div class="download-card">
+
+<i class="fa-solid fa-file-word"></i>
+
+<h3>
+Modul Ajar
+</h3>
+
+<p>
+Format Pdf
+</p>
+
+<a href="modul_ajar/modulajar.html">
+Download
+</a>
+
+</div>
+
+<div class="download-card">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+<h3>
+ATP
+</h3>
+
+<p>
+Format Pdf
+</p>
+
+<a href="ATP/atp.html">
+Download
+</a>
+
+</div>
+
+<div class="download-card">
+
+<i class="fa-solid fa-file-excel"></i>
+
+<h3>
+E-Book
+</h3>
+
+<p>
+Format Pdf
+</p>
+
+<a href="#">
+Download
+</a>
+
+</div>
+
+<div class="download-card">
+
+<i class="fa-solid fa-file-powerpoint"></i>
+
+<h3>
+Kurikulum
+</h3>
+
+<p>
+Format Pdf
+</p>
+
+<a href="kurikulum/kurikulum.html">
+Kurikulum
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     STATISTIK
+===================================================== -->
+
+<section class="statistics">
+
+<div class="container">
+
+<div class="stat-box">
+
+<h2>250+</h2>
+
+<p>
+Artikel
+</p>
+
+</div>
+
+<div class="stat-box">
+
+<h2>120+</h2>
+
+<p>
+Modul Ajar
+</p>
+
+</div>
+
+<div class="stat-box">
+
+<h2>85+</h2>
+
+<p>
+Guru Aktif
+</p>
+
+</div>
+
+<div class="stat-box">
+
+<h2>10K+</h2>
+
+<p>
+Pengunjung
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container footer-grid">
+
+<div>
+
+<h3>
+GURU PUCANGLABAN
+</h3>
+
+<p>
+
+Portal pendidikan yang menyediakan informasi, berita, perangkat pembelajaran, modul ajar, video pembelajaran, dan berbagai referensi guru.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+Menu
+</h3>
+
+<ul>
+
+<li>
+
+<a href="index.html">
+Beranda
+</a>
+
+</li>
+
+<li>
+
+<a href="#">
+Berita
+</a>
+
+</li>
+
+<li>
+
+<a href="modul_ajar/modulajar.html">
+Bahan Ajar
+</a>
+
+</li>
+
+<li>
+
+<a href="kurikulum/kurikulum.html">
+Download
+</a>
+
+</li>
+
+<li>
+
+<a href="Galeri/Galeri.html">
+Galeri
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>
+Kontak
+</h3>
+
+<p>
+
+<i class="fa-solid fa-envelope"></i>
+
+[Email](mailto:gurupucanglaban@gmail.com)
+
+</p>
+
+<p>
+
+<!--<i class="fa-solid fa-phone"></i>
+
+08xxxxxxxxxx-->
+
+</p>
+
+<p>
+
+<i class="fa-solid fa-location-dot"></i>
+
+Kecamatan Pucanglaban
+
+</p>
+
+</div>
+
+<div>
+
+<h3>
+Ikuti Kami
+</h3>
+
+<div class="social-icon">
+
+<!--<a href="#">
+<i class="fa-brands fa-facebook-f"></i>
+</a>-->
+
+<a href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-youtube"></i>
+</a>
+
+<a href="https://www.tiktok.com/@guru.pucanglaban" target="_blank" rel="noopener noreferrer">
+    <i class="fa-brands fa-tiktok"></i>
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+<p>
+
+© 2026 GURU PUCANGLABAN | All Rights Reserved
+
+</p>
+
+</div>
+
+</footer>
+
+<!-- =====================================================
+     TOP BUTTON
+===================================================== -->
+
+<button
+id="topButton"
+type="button"
+
+>
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<!-- =====================================================
+     GOOGLE LOGIN MODAL
+===================================================== -->
+
+<div
+    id="googleLoginModal"
+    class="google-login-modal"
+    style="display:none;"
+    aria-hidden="true"
+>
+
+<div class="google-login-box">
+
+<button
+id="closeGoogleLogin"
+class="close-login"
+type="button"
+aria-label="Tutup"
+
+>
+
+×
+
+</button>
+
+<h2>
+Login GURU PUCANGLABAN
+</h2>
+
+<p>
+Silakan login menggunakan akun Google Anda.
+</p>
+
+<div
+    id="g_id_onload"
+    data-client_id="343334949707-34v8137eah09lasisr3pemd57puo05vc.apps.googleusercontent.com"
+    data-callback="handleIndexGoogleLogin"
+    data-auto_prompt="false"
+>
+</div>
+
+<div
+    class="g_id_signin"
+    data-type="standard"
+    data-size="large"
+    data-theme="outline"
+    data-text="signin_with"
+    data-shape="rectangular"
+    data-logo_alignment="left"
+>
+</div>
+
+</div>
+
+</div>
+
+<!-- =====================================================
+     GOOGLE + SUPABASE LOGIN
+===================================================== -->
+
+<script>
+
+/* =====================================================
+   SUPABASE CONFIGURATION
+===================================================== */
+
+const INDEX_SUPABASE_URL =
+    "https://wzitaorxesesxlcpulat.supabase.co";
+
+const INDEX_SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_zbr4IVpzJJI1HwOERq_h7g_SKi2h9tg";
+
+
+/* =====================================================
+   ADMIN GOOGLE
+===================================================== */
+
+const INDEX_ADMIN_EMAIL =
+    "gurupucanglaban@gmail.com";
+
+
+/* =====================================================
+   SUPABASE CLIENT
+===================================================== */
+
+const indexSupabaseClient =
+    window.supabase.createClient(
+        INDEX_SUPABASE_URL,
+        INDEX_SUPABASE_PUBLISHABLE_KEY,
+        {
+            auth: {
+                persistSession: true,
+                autoRefreshToken: true,
+                detectSessionInUrl: true,
+                storage: window.localStorage
+            }
+        }
+    );
+
+
+/* =====================================================
+   DEFAULT AVATAR
+===================================================== */
+
+const INDEX_DEFAULT_AVATAR =
+    "images/tamu.jpeg";
+
+
+/* =====================================================
+   ELEMENT
+===================================================== */
+
+let indexLoginModal = null;
+let indexLoginButton = null;
+let indexCloseLogin = null;
+let indexLoginMenu = null;
+let indexUserMenu = null;
+let indexLogoutButton = null;
+
+
+/* =====================================================
+   NORMALISASI EMAIL
+===================================================== */
+
+function normalizeIndexEmail(email) {
+
+    return String(email || "")
+        .trim()
+        .toLowerCase();
+
+}
+
+
+/* =====================================================
+   CEK ADMIN
+===================================================== */
+
+function isIndexAdmin(user) {
+
+    if (!user) {
+        return false;
+    }
+
+    return (
+        normalizeIndexEmail(user.email) ===
+        INDEX_ADMIN_EMAIL
+    );
+
+}
+
+
+/* =====================================================
+   AMBIL NAMA GOOGLE
+===================================================== */
+
+function getIndexUserName(user) {
+
+    if (!user) {
+        return "Pengguna";
+    }
+
+
+    const metadata =
+        user.user_metadata || {};
+
+
+    const name =
+        metadata.full_name ||
+        metadata.name ||
+        metadata.preferred_username ||
+        "";
+
+
+    if (String(name).trim()) {
+
+        return String(name).trim();
+
+    }
+
+
+    if (user.email) {
+
+        const emailName =
+            String(user.email)
+                .split("@")[0]
+                .trim();
+
+        if (emailName) {
+
+            return emailName;
+
+        }
+
+    }
+
+
+    return "Pengguna";
+
+}
+
+
+/* =====================================================
+   AMBIL FOTO GOOGLE
+===================================================== */
+
+function getIndexUserPhoto(user) {
+
+    if (!user) {
+        return INDEX_DEFAULT_AVATAR;
+    }
+
+
+    const metadata =
+        user.user_metadata || {};
+
+
+    return (
+        metadata.avatar_url ||
+        metadata.picture ||
+        metadata.photo_url ||
+        INDEX_DEFAULT_AVATAR
+    );
+
+}
+
+
+/* =====================================================
+   SAFE AVATAR
+===================================================== */
+
+function setIndexSafeAvatar(
+    element,
+    photo,
+    name
+) {
+
+    if (!element) {
+        return;
+    }
+
+
+    const safePhoto =
+        photo ||
+        INDEX_DEFAULT_AVATAR;
+
+
+    element.alt =
+        name ||
+        "Pengguna";
+
+
+    element.onerror =
+        function () {
+
+            this.onerror = null;
+
+            this.src =
+                INDEX_DEFAULT_AVATAR;
+
+        };
+
+
+    element.src =
+        safePhoto;
+
+}
+
+
+/* =====================================================
+   BUKA MODAL
+===================================================== */
+
+function openIndexLoginModal() {
+
+    if (!indexLoginModal) {
+        return;
+    }
+
+
+    indexLoginModal.style.display =
+        "flex";
+
+
+    indexLoginModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+}
+
+
+/* =====================================================
+   TUTUP MODAL
+===================================================== */
+
+function closeIndexLoginModal() {
+
+    if (!indexLoginModal) {
+        return;
+    }
+
+
+    indexLoginModal.style.display =
+        "none";
+
+
+    indexLoginModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+}
+
+
+/* =====================================================
+   DOM READY
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    async function () {
+
+        indexLoginButton =
+            document.getElementById(
+                "loginButton"
+            );
+
+
+        indexLoginMenu =
+            document.getElementById(
+                "loginMenu"
+            );
+
+
+        indexLoginModal =
+            document.getElementById(
+                "googleLoginModal"
+            );
+
+
+        indexCloseLogin =
+            document.getElementById(
+                "closeGoogleLogin"
+            );
+
+
+        indexUserMenu =
+            document.getElementById(
+                "userMenu"
+            );
+
+
+        indexLogoutButton =
+            document.getElementById(
+                "logoutButton"
+            );
+
+
+        /* =============================================
+           DEFAULT AVATAR
+        ============================================= */
+
+        setIndexSafeAvatar(
+            document.getElementById(
+                "navUserPhoto"
+            ),
+            INDEX_DEFAULT_AVATAR,
+            "Pengguna"
+        );
+
+
+        setIndexSafeAvatar(
+            document.getElementById(
+                "dropdownUserPhoto"
+            ),
+            INDEX_DEFAULT_AVATAR,
+            "Pengguna"
+        );
+
+
+        /* =============================================
+           LOGIN BUTTON
+        ============================================= */
+
+        if (indexLoginButton) {
+
+            indexLoginButton.addEventListener(
+                "click",
+                function (e) {
+
+                    e.preventDefault();
+
+                    openIndexLoginModal();
+
+                }
+            );
+
+        }
+
+
+        /* =============================================
+           USER MENU LINK
+        ============================================= */
+
+        const userMenuLink =
+            document.getElementById(
+                "userMenuLink"
+            );
+
+
+        if (userMenuLink) {
+
+            userMenuLink.addEventListener(
+                "click",
+                function (e) {
+
+                    e.preventDefault();
+
+                }
+            );
+
+        }
+
+
+        /* =============================================
+           CLOSE BUTTON
+        ============================================= */
+
+        if (indexCloseLogin) {
+
+            indexCloseLogin.addEventListener(
+                "click",
+                function (e) {
+
+                    e.preventDefault();
+
+                    closeIndexLoginModal();
+
+                }
+            );
+
+        }
+
+
+        /* =============================================
+           CLICK OUTSIDE MODAL
+        ============================================= */
+
+        if (indexLoginModal) {
+
+            indexLoginModal.addEventListener(
+                "click",
+                function (e) {
+
+                    if (
+                        e.target ===
+                        indexLoginModal
+                    ) {
+
+                        closeIndexLoginModal();
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        /* =============================================
+           ESC
+        ============================================= */
+
+        document.addEventListener(
+            "keydown",
+            function (e) {
+
+                if (
+                    e.key === "Escape"
+                ) {
+
+                    closeIndexLoginModal();
+
+                }
+
+            }
+        );
+
+
+        /* =============================================
+           LOGOUT
+        ============================================= */
+
+        if (indexLogoutButton) {
+
+            indexLogoutButton.addEventListener(
+                "click",
+                indexLogoutUser
+            );
+
+        }
+
+
+        /* =============================================
+           CEK SESSION AWAL
+        ============================================= */
+
+        await indexCheckSession();
+
+    }
+);
+
+
+/* =====================================================
+   GOOGLE LOGIN
+===================================================== */
+
+async function handleIndexGoogleLogin(
+    response
+) {
+
+    console.log(
+        "================================="
+    );
+
+    console.log(
+        "GOOGLE LOGIN CALLBACK INDEX"
+    );
+
+    console.log(
+        "================================="
+    );
+
+
+    if (
+        !response ||
+        !response.credential
+    ) {
+
+        console.error(
+            "Credential Google tidak ditemukan."
+        );
+
+        alert(
+            "Login Google gagal. Credential tidak ditemukan."
+        );
+
+        return;
+
+    }
+
+
+    try {
+
+        console.log(
+            "Mengirim Google ID Token ke Supabase..."
+        );
+
+
+        const {
+            data,
+            error
+        } =
+            await indexSupabaseClient.auth.signInWithIdToken({
+
+                provider: "google",
+
+                token: response.credential
+
+            });
+
+
+        if (error) {
+
+            console.error(
+                "SUPABASE AUTH ERROR:",
+                error
+            );
+
+            alert(
+                "Login Google ke Supabase gagal:\n\n" +
+                error.message
+            );
+
+            return;
+
+        }
+
+
+        const user =
+            data?.user;
+
+
+        if (!user) {
+
+            console.error(
+                "User Supabase tidak ditemukan."
+            );
+
+            alert(
+                "Login gagal. User Supabase tidak ditemukan."
+            );
+
+            return;
+
+        }
+
+
+        console.log(
+            "SUPABASE USER:",
+            user
+        );
+
+
+        const {
+            data: sessionData,
+            error: sessionError
+        } =
+            await indexSupabaseClient.auth.getSession();
+
+
+        if (sessionError) {
+
+            console.error(
+                "Gagal membaca session:",
+                sessionError
+            );
+
+            alert(
+                "Login berhasil tetapi session belum dapat dibaca."
+            );
+
+            return;
+
+        }
+
+
+        const session =
+            sessionData?.session;
+
+
+        if (
+            !session ||
+            !session.user
+        ) {
+
+            console.error(
+                "Session Supabase tidak ditemukan."
+            );
+
+            alert(
+                "Login berhasil tetapi session Supabase tidak tersimpan."
+            );
+
+            return;
+
+        }
+
+
+        console.log(
+            "SESSION SUPABASE AKTIF"
+        );
+
+        console.log(
+            "EMAIL:",
+            session.user.email
+        );
+
+
+        /* =============================================
+           SIMPAN KOMPATIBILITAS LAMA
+        ============================================= */
+
+        try {
+
+            localStorage.setItem(
+                "googleLoggedIn",
+                "true"
+            );
+
+
+            localStorage.setItem(
+                "googleUser",
+                JSON.stringify({
+
+                    id:
+                        session.user.id,
+
+                    name:
+                        getIndexUserName(
+                            session.user
+                        ),
+
+                    email:
+                        session.user.email ||
+                        "",
+
+                    picture:
+                        getIndexUserPhoto(
+                            session.user
+                        ),
+
+                    isAdmin:
+                        isIndexAdmin(
+                            session.user
+                        )
+
+                })
+            );
+
+        }
+
+        catch (storageError) {
+
+            console.warn(
+                "LocalStorage tidak dapat digunakan:",
+                storageError
+            );
+
+        }
+
+
+        /* =============================================
+           TAMPILKAN USER DARI SESSION
+        ============================================= */
+
+        tampilkanIndexUser(
+            session.user
+        );
+
+
+        closeIndexLoginModal();
+
+
+        console.log(
+            "LOGIN SUPABASE BERHASIL"
+        );
+
+
+        console.log(
+            "ADMIN:",
+            isIndexAdmin(
+                session.user
+            )
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Google Login Error:",
+            error
+        );
+
+        alert(
+            "Google Login gagal diproses."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CALLBACK GOOGLE GLOBAL
+===================================================== */
+
+window.handleIndexGoogleLogin =
+    handleIndexGoogleLogin;
+
+
+/* =====================================================
+   CEK SESSION SUPABASE
+===================================================== */
+
+async function indexCheckSession() {
+
+    try {
+
+        console.log(
+            "Memeriksa session Supabase INDEX..."
+        );
+
+
+        const {
+            data,
+            error
+        } =
+            await indexSupabaseClient.auth.getSession();
+
+
+        if (error) {
+
+            console.error(
+                "Gagal membaca session:",
+                error
+            );
+
+            tampilkanIndexSebagaiTamu();
+
+            return;
+
+        }
+
+
+        const session =
+            data?.session;
+
+
+        if (
+            session &&
+            session.user
+        ) {
+
+            console.log(
+                "================================="
+            );
+
+            console.log(
+                "SESSION SUPABASE DITEMUKAN"
+            );
+
+            console.log(
+                "USER:",
+                session.user.email
+            );
+
+            console.log(
+                "ADMIN:",
+                isIndexAdmin(
+                    session.user
+                )
+            );
+
+            console.log(
+                "================================="
+            );
+
+
+            try {
+
+                localStorage.setItem(
+                    "googleLoggedIn",
+                    "true"
+                );
+
+            }
+
+            catch (e) {
+
+                console.warn(
+                    "LocalStorage tidak tersedia."
+                );
+
+            }
+
+
+            tampilkanIndexUser(
+                session.user
+            );
+
+        }
+
+        else {
+
+            console.log(
+                "Tidak ada session Supabase."
+            );
+
+            tampilkanIndexSebagaiTamu();
+
+        }
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Session error:",
+            error
+        );
+
+        tampilkanIndexSebagaiTamu();
+
+    }
+
+}
+
+
+/* =====================================================
+   TAMPILKAN USER
+===================================================== */
+
+function tampilkanIndexUser(
+    user
+) {
+
+    if (!user) {
+
+        tampilkanIndexSebagaiTamu();
+
+        return;
+
+    }
+
+
+    const loginMenu =
+        document.getElementById(
+            "loginMenu"
+        );
+
+
+    const userMenu =
+        document.getElementById(
+            "userMenu"
+        );
+
+
+    const navUserPhoto =
+        document.getElementById(
+            "navUserPhoto"
+        );
+
+
+    const navUserName =
+        document.getElementById(
+            "navUserName"
+        );
+
+
+    const dropdownUserPhoto =
+        document.getElementById(
+            "dropdownUserPhoto"
+        );
+
+
+    const dropdownUserName =
+        document.getElementById(
+            "dropdownUserName"
+        );
+
+
+    const dropdownUserEmail =
+        document.getElementById(
+            "dropdownUserEmail"
+        );
+
+
+    /* =================================================
+       NAMA GOOGLE
+    ================================================= */
+
+    const nama =
+        getIndexUserName(
+            user
+        );
+
+
+    /* =================================================
+       EMAIL
+    ================================================= */
+
+    const email =
+        user.email ||
+        "";
+
+
+    /* =================================================
+       FOTO GOOGLE
+    ================================================= */
+
+    const foto =
+        getIndexUserPhoto(
+            user
+        );
+
+
+    /* =================================================
+       NAVBAR
+    ================================================= */
+
+    setIndexSafeAvatar(
+        navUserPhoto,
+        foto,
+        nama
+    );
+
+
+    if (navUserName) {
+
+        navUserName.textContent =
+            nama;
+
+    }
+
+
+    /* =================================================
+       DROPDOWN
+    ================================================= */
+
+    setIndexSafeAvatar(
+        dropdownUserPhoto,
+        foto,
+        nama
+    );
+
+
+    if (dropdownUserName) {
+
+        dropdownUserName.textContent =
+            nama;
+
+    }
+
+
+    if (dropdownUserEmail) {
+
+        dropdownUserEmail.textContent =
+            email;
+
+    }
+
+
+    /* =================================================
+       LOGIN → USER
+    ================================================= */
+
+    if (loginMenu) {
+
+        loginMenu.style.display =
+            "none";
+
+    }
+
+
+    if (userMenu) {
+
+        userMenu.style.display =
+            "block";
+
+    }
+
+
+    /* =================================================
+       SIMPAN USER AKTIF
+    ================================================= */
+
+    window.indexCurrentUser =
+        user;
+
+    window.indexCurrentIsAdmin =
+        isIndexAdmin(
+            user
+        );
+
+}
+
+
+/* =====================================================
+   TAMPILKAN TAMU
+===================================================== */
+
+function tampilkanIndexSebagaiTamu() {
+
+    const loginMenu =
+        document.getElementById(
+            "loginMenu"
+        );
+
+
+    const userMenu =
+        document.getElementById(
+            "userMenu"
+        );
+
+
+    if (userMenu) {
+
+        userMenu.style.display =
+            "none";
+
+    }
+
+
+    if (loginMenu) {
+
+        loginMenu.style.display =
+            "block";
+
+    }
+
+
+    setIndexSafeAvatar(
+        document.getElementById(
+            "navUserPhoto"
+        ),
+        INDEX_DEFAULT_AVATAR,
+        "Pengguna"
+    );
+
+
+    setIndexSafeAvatar(
+        document.getElementById(
+            "dropdownUserPhoto"
+        ),
+        INDEX_DEFAULT_AVATAR,
+        "Pengguna"
+    );
+
+
+    const navUserName =
+        document.getElementById(
+            "navUserName"
+        );
+
+
+    const dropdownUserName =
+        document.getElementById(
+            "dropdownUserName"
+        );
+
+
+    const dropdownUserEmail =
+        document.getElementById(
+            "dropdownUserEmail"
+        );
+
+
+    if (navUserName) {
+
+        navUserName.textContent =
+            "Pengguna";
+
+    }
+
+
+    if (dropdownUserName) {
+
+        dropdownUserName.textContent =
+            "Pengguna";
+
+    }
+
+
+    if (dropdownUserEmail) {
+
+        dropdownUserEmail.textContent =
+            "-";
+
+    }
+
+
+    window.indexCurrentUser =
+        null;
+
+    window.indexCurrentIsAdmin =
+        false;
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+async function indexLogoutUser(e) {
+
+    if (e) {
+
+        e.preventDefault();
+
+    }
+
+
+    try {
+
+        console.log(
+            "Logout Supabase INDEX..."
+        );
+
+
+        const {
+            error
+        } =
+            await indexSupabaseClient.auth.signOut();
+
+
+        if (error) {
+
+            console.error(
+                "Supabase logout error:",
+                error
+            );
+
+            alert(
+                "Logout gagal:\n\n" +
+                error.message
+            );
+
+            return;
+
+        }
+
+
+        try {
+
+            localStorage.removeItem(
+                "googleUser"
+            );
+
+            localStorage.removeItem(
+                "googleLoggedIn"
+            );
+
+        }
+
+        catch (storageError) {
+
+            console.warn(
+                "LocalStorage tidak dapat dibersihkan:",
+                storageError
+            );
+
+        }
+
+
+        console.log(
+            "Logout berhasil."
+        );
+
+
+        tampilkanIndexSebagaiTamu();
+
+
+        closeIndexLoginModal();
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Logout error:",
+            error
+        );
+
+        alert(
+            "Terjadi kesalahan saat logout."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   MONITOR AUTH SUPABASE
+===================================================== */
+
+indexSupabaseClient.auth.onAuthStateChange(
+    function (
+        event,
+        session
+    ) {
+
+        console.log(
+            "SUPABASE AUTH EVENT INDEX:",
+            event
+        );
+
+
+        if (
+            session &&
+            session.user
+        ) {
+
+            console.log(
+                "AUTH USER INDEX:",
+                session.user.email
+            );
+
+
+            console.log(
+                "AUTH ADMIN INDEX:",
+                isIndexAdmin(
+                    session.user
+                )
+            );
+
+
+            try {
+
+                localStorage.setItem(
+                    "googleLoggedIn",
+                    "true"
+                );
+
+                localStorage.setItem(
+                    "googleUser",
+                    JSON.stringify({
+
+                        id:
+                            session.user.id,
+
+                        name:
+                            getIndexUserName(
+                                session.user
+                            ),
+
+                        email:
+                            session.user.email ||
+                            "",
+
+                        picture:
+                            getIndexUserPhoto(
+                                session.user
+                            ),
+
+                        isAdmin:
+                            isIndexAdmin(
+                                session.user
+                            )
+
+                    })
+                );
+
+            }
+
+            catch (e) {
+
+                console.warn(
+                    "LocalStorage tidak tersedia."
+                );
+
+            }
+
+
+            tampilkanIndexUser(
+                session.user
+            );
+
+        }
+
+        else {
+
+            console.log(
+                "AUTH INDEX: Tidak ada user."
+            );
+
+
+            try {
+
+                localStorage.removeItem(
+                    "googleLoggedIn"
+                );
+
+                localStorage.removeItem(
+                    "googleUser"
+                );
+
+            }
+
+            catch (e) {
+
+                console.warn(
+                    "LocalStorage tidak tersedia."
+                );
+
+            }
+
+
+            tampilkanIndexSebagaiTamu();
+
+        }
+
+    }
+);
+
+</script>
+
+<!-- =====================================================
+     SCRIPT UTAMA WEBSITE
+===================================================== -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

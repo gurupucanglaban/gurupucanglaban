@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="Forum GURU PUCANGLABAN"
+>
+
+<title>Forum - GURU PUCANGLABAN</title>
+
+
+<!-- =====================================================
+     GOOGLE FONT
+===================================================== -->
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+
+<!-- =====================================================
+     FONT AWESOME
+===================================================== -->
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+
+<!-- =====================================================
+     FORUM CSS
+===================================================== -->
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+<div class="navbar-container">
+
+
+<!-- =================================================
+     LOGO
+================================================== -->
+
+<a
+    href="../index.html"
+    class="navbar-brand"
+>
+
+    <i class="fa-solid fa-graduation-cap"></i>
+
+    <span>
+        BERANDA
+    </span>
+
+</a>
+
+
+<!-- =================================================
+     MENU
+================================================== -->
+
+<nav class="navbar-menu">
+
+    <a
+        href="#"
+        class="active"
+    >
+
+        <i class="fa-solid fa-comments"></i>
+
+        Forum
+
+    </a>
+
+</nav>
+
+
+<!-- =================================================
+     USER
+================================================== -->
+
+<div
+    class="nav-user"
+    id="navbarUser"
+>
+
+
+    <!--
+        PATH FOTO TAMU UNTUK FORUM
+
+        forum/forum.html
+        naik satu folder:
+        ../images/tamu.jpeg
+    -->
+
+    <img
+        id="userPhoto"
+        src="../images/tamu.jpeg"
+        alt="Tamu"
+    >
+
+
+    <div>
+
+        <strong id="userName">
+            Tamu
+        </strong>
+
+        <small id="loginInfo">
+            Silakan login
+        </small>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="forum-container">
+
+
+<!-- =================================================
+     JUDUL FORUM
+================================================== -->
+
+<section class="forum-title">
+
+<h1>
+    Forum GURU PUCANGLABAN
+</h1>
+
+<p>
+    Tempat berbagi informasi, foto, file,
+    dan berdiskusi bersama.
+</p>
+
+</section>
+
+
+
+<!-- =================================================
+     CREATE POST
+================================================== -->
+
+<section
+    class="create-post"
+    id="createPost"
+>
+
+
+<!-- =================================================
+     USER POSTING
+================================================== -->
+
+<div class="create-post-header">
+
+
+    <img
+        id="createUserPhoto"
+        src="../images/tamu.jpeg"
+        alt="User"
+    >
+
+
+    <div class="create-post-user">
+
+        <strong id="createUserName">
+            Tamu
+        </strong>
+
+        <small id="createUserInfo">
+            Silakan login untuk membuat postingan
+        </small>
+
+    </div>
+
+</div>
+
+
+
+<!-- =================================================
+     TEXT POST
+================================================== -->
+
+<textarea
+    id="postText"
+    placeholder="Apa yang ingin Anda bagikan?"
+    maxlength="10000"
+></textarea>
+
+
+
+<!-- =================================================
+     PREVIEW
+================================================== -->
+
+<div
+    id="filePreview"
+></div>
+
+
+
+<!-- =================================================
+     UPLOAD OPTIONS
+================================================== -->
+
+<div class="upload-options">
+
+
+    <!-- =================================================
+         FOTO
+    ================================================== -->
+
+    <label
+        for="photoInput"
+        class="upload-button photo-upload"
+    >
+
+        <i class="fa-solid fa-image"></i>
+
+        <span>
+            Foto
+        </span>
+
+    </label>
+
+
+    <input
+        type="file"
+        id="photoInput"
+        accept="image/*"
+        hidden
+    >
+
+
+
+    <!-- =================================================
+         FILE
+    ================================================== -->
+
+    <label
+        for="fileInput"
+        class="upload-button file-upload"
+    >
+
+        <i class="fa-solid fa-paperclip"></i>
+
+        <span>
+            File
+        </span>
+
+    </label>
+
+
+    <input
+        type="file"
+        id="fileInput"
+        hidden
+    >
+
+
+</div>
+
+
+
+<!-- =================================================
+     BATAS UPLOAD
+================================================== -->
+
+<div class="upload-limit-info">
+
+
+    <div>
+
+        <i class="fa-solid fa-image"></i>
+
+        <span>
+            Maks. 1 foto • 1 MB
+        </span>
+
+    </div>
+
+
+    <div>
+
+        <i class="fa-solid fa-file"></i>
+
+        <span>
+            Maks. 1 file • 3 MB
+        </span>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =================================================
+     TOMBOL POSTING
+================================================== -->
+
+<button
+    type="button"
+    id="postButton"
+>
+
+    <i class="fa-solid fa-paper-plane"></i>
+
+    Posting
+
+</button>
+
+
+</section>
+
+
+
+<!-- =================================================
+     LOADING
+================================================== -->
+
+<div
+    id="postsLoading"
+    style="display:none;"
+>
+
+    <i class="fa-solid fa-spinner fa-spin"></i>
+
+    Memuat postingan...
+
+</div>
+
+
+
+<!-- =================================================
+     POSTS
+================================================== -->
+
+<section
+    id="postsContainer"
+>
+
+<!--
+    Semua postingan dibuat
+    oleh forum/script.js
+-->
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     LOGIN MODAL
+===================================================== -->
+
+<div
+    id="loginModal"
+    aria-hidden="true"
+>
+
+<div class="login-modal-content">
+
+
+<!-- =================================================
+     CLOSE
+================================================== -->
+
+<button
+    type="button"
+    id="closeLoginModal"
+    aria-label="Tutup"
+>
+
+    <i class="fa-solid fa-xmark"></i>
+
+</button>
+
+
+
+<!-- =================================================
+     ICON
+================================================== -->
+
+<div class="login-modal-icon">
+
+    <i class="fa-solid fa-user-lock"></i>
+
+</div>
+
+
+
+<h3>
+    Silakan Login
+</h3>
+
+
+
+<p>
+
+    Anda harus login terlebih dahulu
+    untuk membuat posting, memberikan
+    <strong>Suka</strong> atau
+    <strong>Tidak Suka</strong>,
+    dan menulis komentar.
+
+</p>
+
+
+
+<!-- =================================================
+     LOGIN
+================================================== -->
+
+<button
+    type="button"
+    id="loginButton"
+>
+
+    <i class="fa-solid fa-right-to-bracket"></i>
+
+    Login
+
+</button>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SUPABASE JS
+===================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+
+<!-- =====================================================
+     FORUM JAVASCRIPT
+===================================================== -->
+
+<script
+    src="script.js"
+></script>
+
+
+</body>
+
+</html>

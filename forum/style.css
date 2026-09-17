@@ -1,0 +1,1615 @@
+```css
+/* =====================================================
+   FORUM GURU PUCANGLABAN
+   style.css FINAL
+   LAYOUT SIMETRIS + KOLOM POSTING TIDAK MEPET
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #f4f8f5;
+    color: #222;
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    width: 100%;
+    background: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: none;
+}
+
+.navbar-container {
+    width: calc(100% - 30px);
+    max-width: 1500px;
+
+    margin: 0 auto;
+    padding: 8px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 8px;
+
+    background: #16a34a;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.navbar-brand i {
+    font-size: 19px;
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    margin-left: auto;
+    min-width: 0;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    padding: 5px 6px;
+
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =====================================================
+   USER NAVBAR
+===================================================== */
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: white;
+    min-width: 0;
+}
+
+#userPhoto {
+    width: 32px;
+    height: 32px;
+
+    min-width: 32px;
+    min-height: 32px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 2px solid rgba(255, 255, 255, 0.9);
+
+    display: block;
+}
+
+#userName {
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+
+    max-width: 110px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =====================================================
+   LOGIN INFO
+===================================================== */
+
+#loginInfo {
+    display: inline;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 11px;
+    margin: 0;
+}
+
+.nav-user #loginInfo {
+    display: none;
+}
+
+
+/* =====================================================
+   MAIN / KONTEN
+===================================================== */
+
+.forum-container {
+    width: calc(100% - 30px);
+    max-width: 920px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 25px 0 60px;
+}
+
+
+/* =====================================================
+   JUDUL
+===================================================== */
+
+.forum-heading {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.forum-heading h1 {
+    font-size: 27px;
+    color: #15803d;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.forum-heading p {
+    font-size: 13px;
+    color: #777;
+}
+
+.forum-title {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.forum-title h1 {
+    font-size: 27px;
+    color: #15803d;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.forum-title p {
+    font-size: 13px;
+    color: #777;
+}
+
+
+/* =====================================================
+   CREATE POST
+===================================================== */
+
+.create-post-card,
+.create-post {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    margin: 0 0 35px 0;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.07);
+
+    border: 1px solid #e1ebe4;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   USER CREATE POST
+===================================================== */
+
+.create-post-user,
+.create-post-header {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 13px;
+
+    width: 100%;
+}
+
+#createUserPhoto {
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+    min-height: 42px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 2px solid #d8eadc;
+}
+
+.create-post-user strong {
+    display: block;
+
+    font-size: 14px;
+    color: #222;
+}
+
+.create-post-user span,
+.create-post-user small {
+    display: block;
+
+    font-size: 11px;
+    color: #888;
+}
+
+
+/* =====================================================
+   TEXTAREA POSTING
+   DIBERI JARAK DARI BATAS KARTU
+===================================================== */
+
+#postText {
+    display: block;
+
+    /*
+       Lebar sedikit dikurangi supaya
+       tidak mepet dengan batas kartu.
+    */
+    width: calc(100% - 12px);
+    max-width: calc(100% - 12px);
+
+    min-width: 0;
+
+    min-height: 90px;
+
+    margin-left: 0;
+    margin-right: 12px;
+
+    resize: vertical;
+
+    border: 1px solid #d9e4dc;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    background: #fafdfb;
+}
+
+#postText:focus {
+    border-color: #22a552;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 2px rgba(34, 165, 82, 0.08);
+}
+
+#postText::placeholder {
+    color: #aaa;
+}
+
+
+/* =====================================================
+   UPLOAD
+===================================================== */
+
+.upload-options {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 8px;
+
+    width: 100%;
+}
+
+.upload-button {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 5px;
+
+    padding: 4px 7px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.upload-button i {
+    font-size: 13px;
+}
+
+.photo-upload {
+    color: #16803c;
+}
+
+.file-upload {
+    color: #555;
+}
+
+.upload-button:hover {
+    background: #f0f5f2;
+}
+
+
+/* =====================================================
+   UPLOAD LIMIT
+===================================================== */
+
+.upload-limit-info {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 4px;
+
+    font-size: 9px;
+    color: #888;
+
+    width: 100%;
+}
+
+.upload-limit-info > div {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 4px;
+
+    white-space: nowrap;
+}
+
+.upload-limit-info i {
+    font-size: 9px;
+    color: #999;
+}
+
+.upload-limit-info span {
+    font-size: 9px;
+}
+
+
+/* =====================================================
+   PREVIEW
+===================================================== */
+
+#filePreview {
+    margin-top: 10px;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+}
+
+.preview-image img {
+    display: block;
+
+    max-width: 180px;
+    max-height: 150px;
+
+    border-radius: 8px;
+
+    object-fit: cover;
+
+    border: 1px solid #ddd;
+}
+
+.preview-file {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px 10px;
+
+    background: #f3f7f4;
+
+    border: 1px solid #dce7df;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+    color: #555;
+
+    max-width: 100%;
+
+    word-break: break-word;
+}
+
+.preview-file i {
+    color: #16a34a;
+}
+
+
+/* =====================================================
+   POST BUTTON
+===================================================== */
+
+#postButton {
+    display: block;
+
+    width: calc(100% - 12px);
+    max-width: calc(100% - 12px);
+
+    margin-top: 15px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+
+    padding: 10px 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #16a34a;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#postButton:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+}
+
+#postButton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =====================================================
+   POSTS CONTAINER
+===================================================== */
+
+#postsContainer {
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+#postsLoading {
+    text-align: center;
+
+    padding: 20px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+#postsLoading i {
+    margin-right: 6px;
+    color: #16a34a;
+}
+
+
+/* =====================================================
+   POST CARD
+===================================================== */
+
+.post-card {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 17px;
+
+    border: 1px solid #e1ebe4;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.06);
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   POST HEADER
+===================================================== */
+
+.post-header {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 13px;
+
+    width: 100%;
+}
+
+.post-avatar {
+    width: 42px;
+    height: 42px;
+
+    min-width: 42px;
+    min-height: 42px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 2px solid #dceade;
+}
+
+.post-user {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    flex: 1;
+}
+
+.post-user strong {
+    font-size: 14px;
+    color: #222;
+}
+
+.post-user small {
+    font-size: 10px;
+    color: #888;
+    margin-top: 1px;
+}
+
+
+/* =====================================================
+   POST BODY
+===================================================== */
+
+.post-body {
+    margin-bottom: 13px;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+.post-body p {
+    font-size: 13px;
+
+    color: #333;
+
+    white-space: pre-wrap;
+
+    word-break: break-word;
+
+    overflow-wrap: anywhere;
+
+    margin-bottom: 10px;
+}
+
+
+/* =====================================================
+   POST IMAGE
+===================================================== */
+
+.post-image {
+    margin-top: 10px;
+
+    width: 100%;
+    max-width: 100%;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+.post-image img {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+
+    max-height: 500px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   POST FILE
+===================================================== */
+
+.post-file {
+    margin-top: 10px;
+
+    max-width: 100%;
+
+    overflow: hidden;
+}
+
+.post-file a {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    background: #f3f8f4;
+
+    border: 1px solid #dce8df;
+
+    border-radius: 8px;
+
+    color: #16803c;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    word-break: break-all;
+
+    max-width: 100%;
+}
+
+.post-file a:hover {
+    background: #e7f5ea;
+}
+
+
+/* =====================================================
+   POST STAT
+===================================================== */
+
+.post-stat {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 9px 8px;
+
+    border-bottom: 1px solid #edf1ee;
+
+    color: #777;
+
+    font-size: 11px;
+
+    gap: 28px;
+
+    width: 100%;
+}
+
+.post-stat span {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    white-space: nowrap;
+}
+
+.post-stat i {
+    color: #e05252;
+}
+
+
+/* =====================================================
+   POST BUTTONS
+===================================================== */
+
+.post-buttons {
+    display: flex;
+
+    gap: 14px;
+
+    padding-top: 10px;
+
+    justify-content: center;
+
+    width: 100%;
+}
+
+.post-buttons button {
+    flex: 1;
+
+    border: none;
+
+    background: #f3f7f4;
+
+    color: #555;
+
+    border-radius: 7px;
+
+    padding: 8px 10px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    white-space: nowrap;
+
+    min-width: 0;
+}
+
+.post-buttons button:hover {
+    background: #e2f2e6;
+    color: #16803c;
+}
+
+.post-buttons button.liked {
+    background: #e2f4e7;
+    color: #16a34a;
+}
+
+
+/* =====================================================
+   OWNER ACTION POST
+===================================================== */
+
+.post-actions-owner {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    margin-left: auto;
+}
+
+.edit-post-button,
+.delete-post-button {
+    width: 24px;
+    height: 24px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+
+    background: transparent;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 10px;
+}
+
+.edit-post-button i,
+.delete-post-button i {
+    font-size: 10px;
+}
+
+.edit-post-button:hover,
+.delete-post-button:hover {
+    opacity: 0.65;
+}
+.post-content {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+}
+
+/* =====================================================
+   COMMENTS AREA
+===================================================== */
+
+.comments-area {
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+/* =====================================================
+   COMMENT LIST
+===================================================== */
+
+.comments-list {
+    margin-top: 13px;
+    padding-top: 5px;
+
+    width: 100%;
+}
+
+.comment-item {
+    display: flex;
+
+    gap: 8px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #f0f2f1;
+
+    width: 100%;
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+}
+
+.comment-avatar {
+    width: 32px;
+    height: 32px;
+
+    min-width: 32px;
+    min-height: 32px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 1px solid #dce7df;
+}
+
+.comment-content {
+    min-width: 0;
+
+    flex: 1;
+
+    position: relative;
+}
+
+.comment-content strong {
+    display: block;
+
+    font-size: 11px;
+
+    color: #333;
+
+    margin-bottom: 2px;
+}
+
+.comment-content p {
+    font-size: 11px;
+
+    color: #555;
+
+    word-break: break-word;
+
+    margin: 0;
+}
+
+.comment-content small {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 9px;
+
+    color: #999;
+}
+
+
+/* =====================================================
+   COMMENT SECTION
+===================================================== */
+
+.comment-section {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 12px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #edf1ee;
+
+    width: 100%;
+}
+
+.comment-input {
+    flex: 1;
+
+    min-width: 0;
+
+    width: 100%;
+
+    height: 55px !important;
+    min-height: 55px !important;
+    max-height: 55px !important;
+
+    border: 1px solid #dce5df;
+
+    border-radius: 18px;
+
+    padding: 8px 12px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    background: #fafcfa;
+
+    resize: none;
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+}
+
+.comment-input:focus {
+    border-color: #22a552;
+    background: white;
+}
+
+.send-comment {
+    width: 34px;
+    height: 34px;
+
+    min-width: 34px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #16a34a;
+
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.send-comment:hover {
+    background: #15803d;
+}
+
+
+/* =====================================================
+   COMMENT OWNER ACTION
+===================================================== */
+
+.comment-actions-owner {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    margin-top: 3px;
+}
+
+.edit-comment-button,
+.delete-comment-button {
+    width: 24px;
+    height: 24px;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+
+    background: transparent;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 10px;
+}
+
+.edit-comment-button i,
+.delete-comment-button i {
+    font-size: 10px;
+}
+
+.edit-comment-button:hover,
+.delete-comment-button:hover {
+    opacity: 0.65;
+}
+
+
+/* =====================================================
+   LIHAT SEMUA KOMENTAR
+===================================================== */
+
+.show-all-comments {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 8px;
+
+    padding: 6px 10px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #16a34a;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.show-all-comments:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   EMPTY POST
+===================================================== */
+
+.empty-post {
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    color: #777;
+
+    border: 1px solid #e1ebe4;
+
+    width: 100%;
+}
+
+.empty-post i {
+    font-size: 28px;
+
+    color: #16a34a;
+
+    margin-bottom: 10px;
+}
+
+.empty-post p {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 4px;
+}
+
+.empty-post small {
+    font-size: 11px;
+
+    color: #999;
+}
+
+
+/* =====================================================
+   LOGIN MODAL
+===================================================== */
+
+#loginModal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+}
+
+#loginModal.active {
+    display: flex;
+}
+
+.login-modal-content {
+    width: 100%;
+
+    max-width: 380px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.2);
+
+    position: relative;
+}
+
+#closeLoginModal {
+    position: absolute;
+
+    right: 14px;
+    top: 12px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 20px;
+
+    color: #888;
+
+    cursor: pointer;
+}
+
+.login-modal-icon {
+    margin-bottom: 10px;
+}
+
+.login-modal-icon i {
+    font-size: 30px;
+
+    color: #16a34a;
+}
+
+.login-modal-content h2,
+.login-modal-content h3 {
+    color: #15803d;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.login-modal-content p {
+    color: #777;
+
+    font-size: 12px;
+
+    margin-bottom: 18px;
+}
+
+#loginButton {
+    width: 100%;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #16a34a;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#loginButton:hover {
+    background: #15803d;
+}
+
+
+/* =====================================================
+   RESPONSIVE TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .navbar-container {
+        width: 100%;
+
+        max-width: none;
+
+        padding: 8px 10px;
+
+        gap: 6px;
+    }
+
+    .navbar-brand {
+        font-size: 15px;
+        gap: 5px;
+    }
+
+    .navbar-brand i {
+        font-size: 17px;
+    }
+
+    .navbar-menu {
+        gap: 2px;
+    }
+
+    .navbar-menu a {
+        font-size: 11px;
+        padding: 5px 5px;
+    }
+
+    #userName {
+        max-width: 100px;
+    }
+
+    .forum-container {
+        width: calc(100% - 24px);
+
+        max-width: 920px;
+
+        padding: 20px 0 50px;
+    }
+
+    .forum-heading h1,
+    .forum-title h1 {
+        font-size: 23px;
+    }
+
+    .create-post-card,
+    .create-post {
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+
+    #postText {
+        width: calc(100% - 10px);
+        max-width: calc(100% - 10px);
+
+        margin-right: 10px;
+    }
+
+    #postButton {
+        width: calc(100% - 10px);
+        max-width: calc(100% - 10px);
+
+        margin-right: 10px;
+    }
+
+    .post-card {
+        padding: 15px;
+    }
+
+    .post-stat {
+        gap: 20px;
+    }
+
+    .post-buttons {
+        gap: 10px;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE HP
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .navbar-container {
+        width: 100%;
+
+        max-width: none;
+
+        padding: 7px 8px;
+
+        gap: 4px;
+    }
+
+    .navbar-brand {
+        font-size: 13px;
+        gap: 4px;
+    }
+
+    .navbar-brand i {
+        font-size: 15px;
+    }
+
+    .navbar-menu {
+        gap: 1px;
+    }
+
+    .navbar-menu a {
+        font-size: 10px;
+        padding: 4px 4px;
+    }
+
+    #userPhoto {
+        width: 29px;
+        height: 29px;
+
+        min-width: 29px;
+        min-height: 29px;
+    }
+
+    #userName {
+        font-size: 10px;
+        max-width: 75px;
+    }
+
+    .nav-user {
+        gap: 4px;
+    }
+
+    .forum-container {
+        width: calc(100% - 20px);
+
+        max-width: 920px;
+
+        padding: 16px 0 45px;
+    }
+
+    .forum-heading {
+        margin-bottom: 17px;
+    }
+
+    .forum-heading h1,
+    .forum-title h1 {
+        font-size: 21px;
+    }
+
+    .forum-heading p,
+    .forum-title p {
+        font-size: 11px;
+    }
+
+    .create-post-card,
+    .create-post {
+        padding: 13px;
+
+        margin-bottom: 28px;
+    }
+
+    #createUserPhoto {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+    }
+
+    /*
+       HP:
+       kolom posting sedikit lebih pendek
+       supaya kanan tidak menempel.
+    */
+    #postText {
+        width: calc(100% - 8px);
+        max-width: calc(100% - 8px);
+
+        margin-right: 8px;
+
+        min-height: 80px;
+
+        font-size: 12px;
+    }
+
+    .upload-options {
+        gap: 7px;
+    }
+
+    .upload-button {
+        padding: 4px 6px;
+        font-size: 11px;
+    }
+
+    .upload-limit-info {
+        gap: 8px;
+    }
+
+    .upload-limit-info span {
+        font-size: 8px;
+    }
+
+    #postButton {
+        width: calc(100% - 8px);
+        max-width: calc(100% - 8px);
+
+        margin-right: 8px;
+
+        margin-top: 13px;
+
+        padding: 9px;
+
+        font-size: 12px;
+    }
+
+    #postsContainer {
+        margin-top: 28px;
+        gap: 15px;
+    }
+
+    .post-card {
+        padding: 13px;
+        border-radius: 11px;
+    }
+
+    .post-avatar {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+    }
+
+    .post-user strong {
+        font-size: 13px;
+    }
+
+    .post-user small {
+        font-size: 9px;
+    }
+
+    .post-body p {
+        font-size: 12px;
+    }
+
+    .post-stat {
+        font-size: 10px;
+
+        gap: 12px;
+
+        justify-content: center;
+
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .post-buttons {
+        gap: 8px;
+
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .post-buttons button {
+        font-size: 10px;
+
+        padding: 7px 6px;
+    }
+
+    .comment-input {
+        font-size: 10px;
+
+        padding: 7px 10px;
+    }
+
+    .send-comment {
+        width: 32px;
+        height: 32px;
+
+        min-width: 32px;
+    }
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+    outline: 2px solid #16a34a;
+
+    outline-offset: 2px;
+}
+```
