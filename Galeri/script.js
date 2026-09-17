@@ -17,6 +17,10 @@ judul:"Pelatihan reog Kendang"
 {
 img:"img/EkstraKurikulerPramuka.jpg",
 judul:"Pelatihan Pramuka"
+},
+{
+img:"img/MBGSDNegeriSumberbendo3.jpeg",
+judul:"MBG SDNegeri 3 Sumberbendo .jpeg"
 }
 ];
 
