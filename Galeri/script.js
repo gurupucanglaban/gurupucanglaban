@@ -15,7 +15,7 @@ img:"img/terireogkendang.jpeg",
 judul:"Pelatihan reog Kendang"
 },
 {
-img:"img/EkstraKurikulerPramuka.jpg",
+img:"img/EkstraKurikulerPramuka.jpeg",
 judul:"Pelatihan Pramuka"
 },
 {
